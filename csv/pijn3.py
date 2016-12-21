@@ -14,11 +14,6 @@
 
 from tkinter import * # module om gui te maken
 import csv # module om csv files te kunnen handelen
-import time # module om tijdsweergave te hebben, nog niet nodig
-import datetime from datetime
-
-
-
 
 class App(Frame):
     def __init__(self, master=None):
@@ -45,19 +40,11 @@ class App(Frame):
         self.b = Button(root, text='Sla op', command=self.writeToFile)
         self.b.grid(row=0, column=4, padx=5, pady=3)
 
-    # hier nog kijken om tijd in te voeren in csv file in eerste kolom, het uur dus
-    def tijd():
-        pass # todo
-
     # schrijven naar csv file
     def writeToFile(self):
         with open('pijn.csv', 'a') as f: # de 'a' staat voor append (toevoegen)
                 w=csv.writer(f, delimiter=',')
                 w.writerow([self.e.get(), self.e1.get()])
-                # hier moet de file nog gesloten worden
-
-
-
 
 
 if __name__ == "__main__":
