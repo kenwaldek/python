@@ -1,7 +1,8 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 
-from Tkinter import *
+from tkinter import *
+from tkinter import ttk
 import time
 root = Tk()
 time1 = ''

@@ -14,6 +14,8 @@
 
 from tkinter import * # module om gui te maken
 import csv # module om csv files te kunnen handelen
+from tkinter import ttk
+import datetime
 
 class App(Frame):
     def __init__(self, master=None):
@@ -54,5 +56,3 @@ if __name__ == "__main__":
         app=App(master=root) # het aanroepen van de class App
         app.mainloop() # runnen van de applicatie
         root.mainloop() # loop programma
-
-        
