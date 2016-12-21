@@ -54,3 +54,5 @@ if __name__ == "__main__":
         app=App(master=root) # het aanroepen van de class App
         app.mainloop() # runnen van de applicatie
         root.mainloop() # loop programma
+
+        
