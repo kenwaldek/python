@@ -16,6 +16,9 @@ from tkinter import * # module om gui te maken
 import csv # module om csv files te kunnen handelen
 from tkinter import ttk
 import datetime
+import time
+
+t = time.strftime("%X")
 
 class App(Frame):
     def __init__(self, master=None):
@@ -46,7 +49,7 @@ class App(Frame):
     def writeToFile(self):
         with open('pijn.csv', 'a') as f: # de 'a' staat voor append (toevoegen)
                 w=csv.writer(f, delimiter=',')
-                w.writerow([self.e.get(), self.e1.get()])
+                w.writerow([t, self.e.get(), self.e1.get()])
 
 
 if __name__ == "__main__":
