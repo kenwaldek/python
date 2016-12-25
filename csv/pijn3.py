@@ -50,7 +50,7 @@ class App(Frame):
         with open('pijn.csv', 'a') as f: # de 'a' staat voor append (toevoegen)
                 w=csv.writer(f, delimiter=',')
                 w.writerow([t, self.e.get(), self.e1.get()])
-                w.close()
+
 
 
 if __name__ == "__main__":
