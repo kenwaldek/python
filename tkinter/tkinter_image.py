@@ -1,4 +1,14 @@
-from tkinter import *
+#! /usr/bin/env python3
+#  -*- coding:utf-8 -*-
+###############################################################
+# © kenwaldek
+#
+# Title: tkinter_image                Version: 1.0
+# Date: 26-12-16                      Language: python3
+# Description: tkinter inladen van image en text via menubar
+#
+###############################################################
+
 from tkinter import Tk
 from PIL import Image, ImageTk
 

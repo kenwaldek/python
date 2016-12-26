@@ -1,3 +1,14 @@
+#! /usr/bin/env python3
+#  -*- coding:utf-8 -*-
+###############################################################
+# © kenwaldek
+#
+# Title: tkinter_menu                Version: 1.0
+# Date: 26-12-16                     Language: python3
+# Description: tkinter menubar
+#
+###############################################################
+
 from tkinter import *
 
 class Window(Frame):
