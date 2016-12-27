@@ -1,5 +1,13 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
+###############################################################
+# © kenwaldek
+#
+# Title: w1gui                Version: 1.0
+# Date: 27-12-16                        Language: python3
+# Description: maken van een tkinter frame met kaders in
+#
+###############################################################
 
 # bestand importeren, moet in dezelfde map stand
 import ds18b20

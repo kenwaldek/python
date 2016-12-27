@@ -8,7 +8,7 @@
 # Description: meerdere threats per keer uitvoeren
 #
 ###############################################################
-
+# todo verder uitzoeken hoe threading werkt !
 import threading
 from queue import Queue
 import time

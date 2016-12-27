@@ -1,4 +1,13 @@
-
+#! /usr/bin/env python3
+#  -*- coding:utf-8 -*-
+###############################################################
+# © kenwaldek
+#
+# Title: dictonary_test                 Version: 1.0
+# Date: 27-12-16                        Language: python3
+# Description: maken van een bibliotheek dictorary dus
+#
+###############################################################
 
 exdict = {'jack':15, 'bob':22, 'alice':12}
 
