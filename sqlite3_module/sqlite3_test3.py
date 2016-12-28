@@ -42,7 +42,7 @@ def read_from_db():
     # print(data)
     for row in c.fetchall(): # is een funktie die row uitleest
         print(row) # zijn alle rijen
-        #print(row[0]) enkel de eerste rij uitprinten
+        print(row[0]) #enkel de eerste rij uitprinten
 
 read_from_db()
 c.close()

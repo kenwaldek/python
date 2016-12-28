@@ -18,8 +18,21 @@ print(', '.join(names))
 
 who = 'gary'
 how_many = 12
-
+# onderstaande is hoe het vroeger was in python2
 print(who, 'bought', how_many, 'apples today')
-# onderstaande is de juiste manier in python3
+# onderstaande is de juiste manier in python3 nu
 print('{} bought {} apples today!' .format(who, how_many))
+# als je toch een order wil toevoegen
+print('{0} bought {1} apples today!' .format(who, how_many))
+print('{1} bought {0} apples today!' .format(who, how_many))
+print('##########')
+
+
+
+
+
+
+
+
+
 
