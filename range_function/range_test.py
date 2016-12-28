@@ -9,16 +9,16 @@
 #
 ###############################################################
 
-# range word een generator genoemd
+#range word een generator genoemd
 for i in range (10):  #print 10x do something
     #do something
-    print('hello  world') #  hetgeen uitgevoerd zal worden
+    print('hello  world')  #het geen uitgevoerd zal worden
 
 print('#########')
 
-xyz = [i for i in range (10)] #vierkante haakjes wordt in memory geladen
+xyz = [i for i in range (10)]  #vierkante haakjes wordt in memory geladen
 print('done')
-xyz = (i for i in range (10)) #dit is  een "generator object"
+xyz = (i for i in range (10))  #dit is  een "generator object"
 print(xyz)
 
-#todo zoek meer info over "generator objects"
+# todo zoek meer info over "generator objects"
