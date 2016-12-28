@@ -19,9 +19,7 @@ for i, j in enumerate(example):  #juiste manier om genummerde lijst te maken
 #     print(i, example(i))       # dit is geen juiste manier
 print('###')
 new_dict = dict(enumerate(example))  # print een dictionary
-
 print(new_dict)
-print('###')
-[print(i, j) for i, j in enumerate(new_dict)]
+
 
 
