@@ -12,6 +12,7 @@
 from tkinter import *
 from tkinter import ttk
 import time
+
 root = Tk()
 time1 = ''
 clock = Label(root, font=('times', 60, 'bold'), bg='red') # color red
