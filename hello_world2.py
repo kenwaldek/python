@@ -10,7 +10,13 @@
 ###############################################################
 
 # do something
-print("hello world")
+def __init__(self):
+  print ('hello to')
+
+
+if __name__ == "__main__":
+    __init__(print)
+
 
 
 
