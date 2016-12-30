@@ -1,3 +1,16 @@
+#! /usr/bin/env python3
+#  -*- coding:utf-8 -*-
+###############################################################
+# © kenwaldek                         GPL-license
+#
+# Title: kleuren                      Version: 1.0
+# Date: 30-12-16                      Language: python3
+# Description: kleuren met tkinter module
+#
+###############################################################
+
+# do something
+
 # import Tkinter as tk
 import random
 import tkinter as tk

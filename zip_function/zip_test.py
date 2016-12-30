@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek
+# © kenwaldek                             GPL-license
 #
-# Title: zit functie                      Version: 1.0
+# Title: zip functie                      Version: 1.0
 # Date: 28-12-16                          Language: python3
 # Description: zip is het bij elkaar voegen van variablen
 #

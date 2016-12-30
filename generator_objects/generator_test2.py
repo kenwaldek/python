@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek
+# © kenwaldek                              GPL-license
 #
-# Title: generator maken          Version:1.0
+# Title: generator maken                   Version:1.0
 # Date: 28-12-16                           Language: python3
 # Description: hier maken we onze eigen generatorr met de
 # functie 'yield'

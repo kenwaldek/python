@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek
+# © kenwaldek                           GPL-license
 #
-# Title: matplotlib_test                   Version: 1.0
+# Title: matplotlib_test                Version: 1.0
 # Date: 27-12-16                        Language: python3
 # Description: een plot maken van data input
 #

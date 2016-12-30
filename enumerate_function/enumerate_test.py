@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek
+# © kenwaldek                             GPL-license
 #
 # Title: enumerate function               Version: 1.0
 # Date: 28-12-16                          Language: python3

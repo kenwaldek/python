@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek
+# © kenwaldek                   GPL-license
 #
 # Title: .format                Version:
 # Date:  24-12-16               Language: python3

@@ -1,9 +1,9 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek
+# © kenwaldek                             GPL-license
 #
-# Title: timeit module                         Version: 1.0
+# Title: timeit module                    Version: 1.0
 # Date: 28-12-16                          Language: python3
 # Description: meet de duur van uitvoerende code
 #
