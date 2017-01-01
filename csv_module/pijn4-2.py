@@ -3,8 +3,8 @@
 
 from tkinter import * # module om gui te maken
 import csv # module om csv files te kunnen handelen
-from tkinter import ttk
-import datetime
+# from tkinter import ttk
+# import datetime
 import time
 import tkinter as tk
 import pandas as pd # voor het inlezen van de csv file
@@ -21,6 +21,7 @@ class App(Frame):
     def inlezen(self):
         df = pd.read_csv('pijn.csv')
         print(df)
+        # df.set_index('Tijd', inplace=True)  #zet index op datum
         lezen = Label(self, text=str(df))
         lezen.grid(row=3, column=0, padx=5, pady=3)
 
