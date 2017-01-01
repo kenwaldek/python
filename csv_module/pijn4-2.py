@@ -8,7 +8,8 @@ import csv # module om csv files te kunnen handelen
 import time
 import tkinter as tk
 import pandas as pd # voor het inlezen van de csv file
-
+from pandas import DataFrame
+from pandas.computation import align
 
 t =  time.strftime("%x  %X") # gemakkelijkere manier
 class App(Frame):
@@ -19,11 +20,12 @@ class App(Frame):
         self.output()
 
     def inlezen(self):
-        df = pd.read_csv('pijn.csv')
-        print(df)
-        # df.set_index('Tijd', inplace=True)  #zet index op datum
-        lezen = Label(self, text=str(df))
-        lezen.grid(row=3, column=0, padx=5, pady=3)
+        df = pd.read_csv('pijn.csv', names=['Tijd', 'Pijn']) #names= om namen aan de colomen toe te voegen
+        #todo hier nog regel invoeren om alles uit te lijnen nr links of rechts
+        print(df)  #gewoon om een uitprint in terminal te zien
+        # df.set_index('Tijd', inplace=True)  #zet index op tijd
+        lezen = Label(self, text=df)  #zet tekst uit csv file in variabel lezen
+        lezen.grid(row=3, column=0, padx=5, pady=3)  #op deze plaats laten verschijnen
 
     def output(self):
         # tekst en textveld datum

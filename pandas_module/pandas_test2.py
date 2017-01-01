@@ -22,6 +22,9 @@ print(df.head())  #spring head uit eerste regels dus
 df = pd.read_csv('newtest.csv', index_col=0)  #terug inlezen en eerste rij als index plaatsen rij'0"
 print(df.head())
 
+df = pd.read_csv('newtest.csv', names=['Naam1', 'Naam2'])
+df.style.set_properties(**{'text-align': 'left'})
+print(df.head())
 
 
 
