@@ -3,16 +3,14 @@
 
 from tkinter import * # module om gui te maken
 import csv # module om csv files te kunnen handelen
-# from tkinter import ttk
-# import datetime
 import time
 import tkinter as tk
 import pandas as pd # voor het inlezen van de csv file
-from pandas import DataFrame
-from pandas.computation import align
 
-t =  time.strftime("%x  %X") # gemakkelijkere manier
 
+
+t =  time.strftime("%x")
+t2 =  time.strftime("%X")
 
 class App(Frame):
     def __init__(self, master=None):
@@ -22,8 +20,10 @@ class App(Frame):
         self.output()
 
     def inlezen(self):
-        df = pd.read_csv('pijn.csv', names=['Tijd', 'Pijn']) #names= om namen aan de colomen toe te voegen
-# todo align de cellen
+        df = pd.read_csv('pijn.csv', names=['Tijd','Pijn']) #names= om namen aan de colomen toe te voegen
+# todo align left onderste doet enkel de header nog aan het bekijken
+        pd.set_option('colheader_justify', 'right')
+### bovenstaande code probeersel
         print(df)  #gewoon om een uitprint in terminal te zien
         lezen1 = Label(self, text='De laatste 10 ingevoerde waarden zijn:')  #laatste 10st ingevoerd tonen
         lezen1.grid(row=3, column=0, padx=5, pady=3)  #op deze plaats laten verschijnen
@@ -55,10 +55,11 @@ class App(Frame):
         # schrijven naar csv file
 
     def writeToFile(self, k=None):
-        t = time.strftime("%x  %X")
+        t = time.strftime("%x")   # gesplitst dat het 2 colommen zijn
+        t2 = time.strftime("%X")  # datum en tijd dus
         with open('pijn.csv', 'a') as f: # de 'a' staat voor append (toevoegen)
                 w=csv.writer(f, delimiter=',')
-                w.writerow([t, self.e1.get()])
+                w.writerow([t, t2,  self.e1.get()])
 
     def Afsluiten(self):
         self.destroy()

@@ -3,9 +3,9 @@
 ###############################################################
 # © kenwaldek                         GPL-license
 #
-# Title: pandas 4                     Version: 1.0
-# Date: 01-01-2017                    Language: python3
-# Description: joining and merging
+# Title: pandas 5                     Version: 1.0
+# Date: 02-01-2017                    Language: python3
+# Description:
 #
 ###############################################################
 import pandas as pd
