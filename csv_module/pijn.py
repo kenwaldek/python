@@ -32,6 +32,7 @@ class App(Frame):
         self.output()
 
     def inlezen(self):
+        # terug inlezen via panda van csv laatste 10 inputs op scherm
         df = pd.read_csv('pijn.csv', names=['Tijd','Pijn']) #names= om namen aan de colomen toe te voegen
 # todo align right onderste doet enkel de header nog aan het bekijken
         pd.set_option('colheader_justify', 'right')
