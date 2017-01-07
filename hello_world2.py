@@ -10,12 +10,8 @@
 ###############################################################
 
 # do something
-def __init__(self):
-  print ('hello to')
+print ('hello to')
 
-
-if __name__ == "__main__":
-    __init__(print)
 
 
 
