@@ -30,6 +30,8 @@ class App(Frame):
         self.grid()
         self.inlezen()  #functie inlezen en aanroepen
         self.output()
+        Frame.tkraise(self)  # om het frame naar voren te brengen
+
 
     def inlezen(self):
         # terug inlezen via panda van csv laatste 10 inputs op scherm

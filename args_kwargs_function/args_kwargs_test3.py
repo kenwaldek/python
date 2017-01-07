@@ -10,7 +10,7 @@
 ###############################################################
 
 # do something
-def func(**kwargs):
+def func(**kwargs): # kwargs = dictionarys meestal
     for item in kwargs.items():
         print (item)
 

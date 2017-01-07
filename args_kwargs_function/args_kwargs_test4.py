@@ -10,7 +10,7 @@
 ###############################################################
 
 # do something
-def func(*args, **kwargs):
+def func(*args, **kwargs): # args = variables, kwargs = dictionarys
     for arg in args:
         print (arg)
     for item in kwargs.items():

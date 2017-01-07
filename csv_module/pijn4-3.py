@@ -18,6 +18,7 @@ class App(Frame):
         self.grid()
         self.inlezen()  #functie inlezen en aanroepen
         self.output()
+        Frame.tkraise(self)  # om het frame naar voren te brengen
 
     def inlezen(self):
         df = pd.read_csv('pijn.csv', names=['Tijd','Pijn']) #names= om namen aan de colomen toe te voegen
