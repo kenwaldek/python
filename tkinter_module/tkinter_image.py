@@ -18,6 +18,7 @@ from PIL import *
 class Window(Frame):
     def __init__(self, master = None):
         Frame.__init__(self, master)
+        Frame.tkraise(self)
 
         self.master = master
         self.init_window()

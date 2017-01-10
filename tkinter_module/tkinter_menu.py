@@ -15,6 +15,7 @@ class Window(Frame):
 
     def __init__(self, master = None):
         Frame.__init__(self, master)
+        Frame.tkraise(self)  # frame aan de voorkant normaal
 
         self.master = master
         self.init_window()

@@ -10,10 +10,6 @@
 ###############################################################
 # do something
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget
-from PyQt5.QtGui import QIcon
-
-import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5.QtGui import QIcon
 
@@ -21,7 +17,7 @@ from PyQt5.QtGui import QIcon
 class App(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.title = 'PyQt5 status bar example - pythonspot.com'
+        self.title = 'PyQt5 status bar example'
         self.left = 10
         self.top = 10
         self.width = 640

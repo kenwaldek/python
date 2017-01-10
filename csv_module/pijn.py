@@ -18,6 +18,7 @@ import csv # module om csv files te kunnen handelen
 import time
 import tkinter as tk
 import pandas as pd # voor het inlezen van de csv file
+# from tkinter import ttk
 
 
 
@@ -31,7 +32,6 @@ class App(Frame):
         self.inlezen()  #functie inlezen en aanroepen
         self.output()
         Frame.tkraise(self)  # om het frame naar voren te brengen
-
 
     def inlezen(self):
         # terug inlezen via panda van csv laatste 10 inputs op scherm
@@ -59,7 +59,7 @@ class App(Frame):
         # aanmaak van button sla op
 
         self.b = Button(root, text='Sla op of druk Enter', command=self.writeToFile)
-        self.b.grid(row=0, column=4, padx=5, pady=3)
+        self.b.grid(row=0, column=4, padx=5, pady=3, sticky=tk.W + tk.E)
 
         self.b1 = Button(root, text='Nieuwe invoer ',font = ('times', 14, 'bold'), bg ='#dddddd', command=self.output)
         self.b1.grid(row=2, column=0, columnspan=3, ipady=4, padx=5,pady=5)
@@ -84,7 +84,7 @@ class App(Frame):
 if __name__ == "__main__":
         root=Tk()
         root.title('Pijn Logger') # dit is de titel
-        root.geometry('1000x300') # groote van het kader
+        root.geometry('1000x350') # groote van het kader
         app=App(master=root) # het aanroepen van de class App
         app.mainloop() # runnen van de applicatie
         root.mainloop() # loop programma
