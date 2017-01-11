@@ -3,19 +3,21 @@
 ###############################################################
 # kenwaldek                           GPL-license
 
-# Title: PyQt5 lesson 12              Version: 1.0
+# Title: PyQt5 lesson 14              Version: 1.0
 # Date: 09-01-17                      Language: python3
-# Description: pyqt5 gui and color picker widget
+# Description: pyqt5 gui and opening files
 # pythonprogramming.net from PyQt4 to PyQt5
 ###############################################################
 # do something
+
+
 import sys
 from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QAction, QMessageBox
-from PyQt5.QtWidgets import QCalendarWidget, QFontDialog
+from PyQt5.QtWidgets import QCalendarWidget, QFontDialog, QColorDialog, QTextEdit, QFileDialog
 from PyQt5.QtWidgets import QCheckBox, QProgressBar, QComboBox, QLabel, QStyleFactory
-from PyQt5.QtWidgets import QColorDialog
+
 
 
 class window(QMainWindow):
@@ -31,11 +33,26 @@ class window(QMainWindow):
         extractAction.setStatusTip('leave the app')
         extractAction.triggered.connect(self.close_application)
 
+        openEditor = QAction('&Editor', self)
+        openEditor.setShortcut('Ctrl+E')
+        openEditor.setStatusTip('Open Editor')
+        openEditor.triggered.connect(self.editor)
+
+        openFile = QAction('&Open File', self)
+        openFile.setShortcut('Ctrl+O')
+        openFile.setStatusTip('Open File')
+        openFile.triggered.connect(self.file_open)
+
         self.statusBar()
 
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
+
+        fileMenu.addAction(openFile)
+
+        editorMenu = mainMenu.addMenu('&Editor')
+        editorMenu.addAction(openEditor)
 
         extractAction = QAction(QIcon('pic.png'), 'flee the scene', self)
         extractAction.triggered.connect(self.close_application)
@@ -53,14 +70,32 @@ class window(QMainWindow):
 
         self.home()
 
+    def editor(self):
+        self.textEdit = QTextEdit()
+        self.setCentralWidget(self.textEdit)
+
+##Todo looking what the error is can't open an file program ends in osx
+##  file = open(name, 'r')
+##  TypeError: expected str, bytes or os.PathLike object, not tuple
+    def file_open(self):
+        filename = QFileDialog.getOpenFileName(self, 'Open File')
+        file = open(filename, 'r')
+
+        self.editor()
+
+        with file:
+            text = file.read()
+            self.textEdit.setText(text)
+
+##End of code problem
     def color_picker(self):
         color = QColorDialog.getColor()
         self.styleChoice.setStyleSheet('QWidget{background-color: %s}' % color.name())
 
     def font_choice(self):
-            font, valid = QFontDialog.getFont()
-            if valid:
-                self.styleChoice.setFont(font)
+        font, valid = QFontDialog.getFont()
+        if valid:
+            self.styleChoice.setFont(font)
 
     def home(self):
         btn = QPushButton('quit', self)
@@ -99,8 +134,6 @@ class window(QMainWindow):
         self.toolBar.addAction(fontColer)
 
         self.show()
-
-
 
     def style_choice(self, text):
         self.styleChoice.setText(text)

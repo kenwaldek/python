@@ -3,9 +3,9 @@
 ###############################################################
 # kenwaldek                           GPL-license
 
-# Title: PyQt5 lesson 12              Version: 1.0
+# Title: PyQt5 lesson 13              Version: 1.0
 # Date: 09-01-17                      Language: python3
-# Description: pyqt5 gui and color picker widget
+# Description: pyqt5 gui and editor
 # pythonprogramming.net from PyQt4 to PyQt5
 ###############################################################
 # do something
@@ -15,7 +15,7 @@ from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QAction, QMessageBox
 from PyQt5.QtWidgets import QCalendarWidget, QFontDialog
 from PyQt5.QtWidgets import QCheckBox, QProgressBar, QComboBox, QLabel, QStyleFactory
-from PyQt5.QtWidgets import QColorDialog
+from PyQt5.QtWidgets import QColorDialog, QTextEdit
 
 
 class window(QMainWindow):
@@ -31,11 +31,19 @@ class window(QMainWindow):
         extractAction.setStatusTip('leave the app')
         extractAction.triggered.connect(self.close_application)
 
+        openEditor = QAction('&Editor', self)
+        openEditor.setShortcut('Ctrl+E')
+        openEditor.setStatusTip('Open Editor')
+        openEditor.triggered.connect(self.editor)
+
         self.statusBar()
 
         mainMenu = self.menuBar()
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
+
+        editorMenu = mainMenu.addMenu('&Editor')
+        editorMenu.addAction(openEditor)
 
         extractAction = QAction(QIcon('pic.png'), 'flee the scene', self)
         extractAction.triggered.connect(self.close_application)
@@ -52,6 +60,10 @@ class window(QMainWindow):
         cal.resize(200, 200)
 
         self.home()
+
+    def editor(self):
+        self.textEdit = QTextEdit()
+        self.setCentralWidget(self.textEdit)
 
     def color_picker(self):
         color = QColorDialog.getColor()
@@ -99,8 +111,6 @@ class window(QMainWindow):
         self.toolBar.addAction(fontColer)
 
         self.show()
-
-
 
     def style_choice(self, text):
         self.styleChoice.setText(text)
