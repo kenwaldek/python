@@ -3,18 +3,19 @@
 ###############################################################
 # kenwaldek                           GPL-license
 
-# Title: PyQt5 lesson 9               Version: 1.0
+# Title: PyQt5 lesson 11              Version: 1.0
 # Date: 08-01-17                      Language: python3
-# Description: pyqt5 gui and progressBar
+# Description: pyqt5 gui and font widget
 # pythonprogramming.net from PyQt4 to PyQt5
 ###############################################################
-
 # do something
 import sys
 from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QAction, QMessageBox
-from PyQt5.QtWidgets import QCheckBox, QProgressBar
+from PyQt5.QtWidgets import QCheckBox, QProgressBar, QComboBox, QLabel, QStyleFactory
+
+
 
 class window(QMainWindow):
 
@@ -61,8 +62,24 @@ class window(QMainWindow):
         self.btn.move(200, 120)
         self.btn.clicked.connect(self.download)
 
+        self.styleChoise = QLabel('Windows', self)
+        comboBox = QComboBox(self)
+        comboBox.addItem('motif')
+        comboBox.addItem('Windows')
+        comboBox.addItem('cde')
+        comboBox.addItem('Plastique')
+        comboBox.addItem('Cleanlooks')
+        comboBox.addItem('windowsvista')
+
+        comboBox.move(25, 250)
+        self.styleChoise.move(25, 150)
+        comboBox.activated[str].connect(self.style_choise)
 
         self.show()
+
+    def style_choise(self, text):
+        self.styleChoise.setText(text)
+        QApplication.setStyle(QStyleFactory.create(text))
 
     def download(self):
         self.completed = 0
@@ -70,7 +87,6 @@ class window(QMainWindow):
         while self.completed < 100:
             self.completed += 0.0001
             self.progress.setValue(self.completed)
-
 
 
     def enlarge_window(self, state):

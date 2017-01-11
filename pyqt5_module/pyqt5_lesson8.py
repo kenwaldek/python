@@ -52,7 +52,7 @@ class window(QMainWindow):
         btn.move(0, 25)
 
         checkBox = QCheckBox('Enlarge window', self)
-        # checkBox.toggle()  # if you want to be checked in the begin
+        # checkBox.toggle()  # if you want to be checked in in the begin
         checkBox.move(0, 50)
         checkBox.stateChanged.connect(self.enlarge_window)
 
