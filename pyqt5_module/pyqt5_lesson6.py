@@ -1,12 +1,12 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek                         GPL-license
+# kenwaldek                           GPL-license
 
 # Title: PyQt5 lesson 6               Version: 1.0
 # Date: 08-01-17                      Language: python3
 # Description: pyqt5 gui add toolbar
-#
+# pythonprogramming.net from PyQt4 to PyQt5
 ###############################################################
 
 # do something
