@@ -4,7 +4,7 @@
 # kenwaldek                           GPL-license
 
 # Title: PyQt5 lesson 11              Version: 1.0
-# Date: 08-01-17                      Language: python3
+# Date: 09-01-17                      Language: python3
 # Description: pyqt5 gui and font widget
 # pythonprogramming.net from PyQt4 to PyQt5
 ###############################################################
@@ -14,7 +14,7 @@ from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QAction, QMessageBox
 from PyQt5.QtWidgets import QCheckBox, QProgressBar, QComboBox, QLabel, QStyleFactory
-
+from PyQt5.QtWidgets import QFontDialog
 
 
 class window(QMainWindow):
@@ -36,19 +36,28 @@ class window(QMainWindow):
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
 
-        extractAcion = QAction(QIcon('pic.png'), 'flee the scene', self)
-        extractAcion.triggered.connect(self.close_application)
-
+        extractAction = QAction(QIcon('pic.png'), 'flee the scene', self)
+        extractAction.triggered.connect(self.close_application)
         self.toolBar = self.addToolBar('extraction')
         self.toolBar.addAction(extractAction)
 
+        fontChoice = QAction('Font', self)
+        fontChoice.triggered.connect(self.font_choice)
+        # self.toolBar = self.addToolBar('Font')
+        self.toolBar.addAction(fontChoice)
+
         self.home()
+
+    def font_choice(self):
+            font, valid = QFontDialog.getFont()
+            if valid:
+                self.styleChoise.setFont(font)
 
     def home(self):
         btn = QPushButton('quit', self)
         btn.clicked.connect(self.close_application)
         btn.resize(btn.sizeHint())
-        btn.move(0, 25)
+        btn.move(0, 100)
 
         checkBox = QCheckBox('Enlarge window', self)
         # checkBox.toggle()  # if you want to be checked in in the begin
@@ -76,6 +85,7 @@ class window(QMainWindow):
         comboBox.activated[str].connect(self.style_choise)
 
         self.show()
+
 
     def style_choise(self, text):
         self.styleChoise.setText(text)

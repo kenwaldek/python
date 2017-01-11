@@ -37,8 +37,8 @@ class window(QMainWindow):
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
 
-        extractAcion = QAction(QIcon('pic.png'), 'flee the scene', self)
-        extractAcion.triggered.connect(self.close_application)
+        extractAction = QAction(QIcon('pic.png'), 'flee the scene', self)
+        extractAction.triggered.connect(self.close_application)
 
         self.toolBar = self.addToolBar('extraction')
         self.toolBar.addAction(extractAction)
@@ -49,7 +49,7 @@ class window(QMainWindow):
         btn = QPushButton('quit', self)
         btn.clicked.connect(self.close_application)
         btn.resize(btn.sizeHint())
-        btn.move(0, 25)
+        btn.move(0, 100)
 
         checkBox = QCheckBox('Enlarge window', self)
         # checkBox.toggle()  # if you want to be checked in in the begin

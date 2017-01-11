@@ -36,8 +36,8 @@ class window(QMainWindow):
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
 
-        extractAcion = QAction(QIcon('pic.png'), 'flee the scene', self)
-        extractAcion.triggered.connect(self.close_application)
+        extractAction = QAction(QIcon('pic.png'), 'flee the scene', self)
+        extractAction.triggered.connect(self.close_application)
 
         self.toolBar = self.addToolBar('extraction')
         self.toolBar.addAction(extractAction)
