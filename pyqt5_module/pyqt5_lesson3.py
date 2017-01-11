@@ -1,11 +1,11 @@
- #! /usr/bin/env python3
+#! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
 # © kenwaldek                         GPL-license
 
-# Title: PyQt5 gui                    Version: 1.0
+# Title: PyQt5 lesson 3               Version: 1.0
 # Date: 08-01-17                      Language: python3
-# Description: pyqt5 gui
+# Description: pyqt5 gui add pushButton
 #
 ###############################################################
 
@@ -22,7 +22,7 @@ class window(QMainWindow):
         super(window, self).__init__()
         self.setGeometry(50, 50, 500, 300)
         self.setWindowTitle('pyqt5 Tut')
-        self.setWindowIcon(QIcon('app.png'))
+        # self.setWindowIcon(QIcon('pic.png'))
         self.home()
 
     def home(self):

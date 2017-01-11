@@ -3,7 +3,7 @@
 ###############################################################
 # © kenwaldek                         GPL-license
 
-# Title: PyQt5 Gui                    Version: 1.0
+# Title: PyQt5 lesson 1               Version: 1.0
 # Date: 08-01-17                      Language: python3
 # Description: pyqt5 simple example of empty window
 #

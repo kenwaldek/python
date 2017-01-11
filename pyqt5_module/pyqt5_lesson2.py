@@ -5,7 +5,7 @@
 
 # Title: PyQt5 lesson 2               Version: 1.0
 # Date: 08-01-17                      Language: python3
-# Description: pyqt5 gui empty window with title and icon
+# Description: pyqt5 gui empty window with title
 #
 ###############################################################
 
@@ -20,7 +20,7 @@ class window(QMainWindow):
         super(window, self).__init__()
         self.setGeometry(50, 50, 500, 300)
         self.setWindowTitle('pyqt5 Tut')
-        self.setWindowIcon(QIcon('app.png'))
+        # self.setWindowIcon(QIcon('pic.png'))
         self.show()
 
 app = QApplication(sys.argv)

@@ -3,7 +3,7 @@
 ###############################################################
 # © kenwaldek                         GPL-license
 
-# Title: PyQt5 lesson 7               Version: 1.0
+# Title: PyQt5 lesson 8               Version: 1.0
 # Date: 08-01-17                      Language: python3
 # Description: pyqt5 gui messageBox quit application
 #
@@ -11,11 +11,11 @@
 
 # do something
 import sys
-from PyQt5.QtCore import QCoreApplication
-# from PyQt5.QtGui import *
+from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QAction, QMessageBox
-from PyQt5.uic.properties import QtGui
+from PyQt5.QtWidgets import QCheckBox
+
 
 
 class window(QMainWindow):
@@ -37,7 +37,7 @@ class window(QMainWindow):
         fileMenu = mainMenu.addMenu('&File')
         fileMenu.addAction(extractAction)
 
-        extractAcion = QAction(QIcon('app.png'), 'flee the scene', self)
+        extractAcion = QAction(QIcon('pic.png'), 'flee the scene', self)
         extractAcion.triggered.connect(self.close_application)
 
         self.toolBar = self.addToolBar('extraction')
@@ -51,7 +51,20 @@ class window(QMainWindow):
         btn.resize(btn.sizeHint())
         btn.move(0, 25)
 
+        checkBox = QCheckBox('Enlarge window', self)
+        # checkBox.toggle()  # if you want to be checked in the begin
+        checkBox.move(0, 50)
+        checkBox.stateChanged.connect(self.enlarge_window)
+
+
         self.show()
+
+    def enlarge_window(self, state):
+        if state == Qt.Checked:
+            self.setGeometry(50, 50, 1000, 600)
+        else:
+            self.setGeometry(50, 50 , 500, 300)
+
 
     def close_application(self):
 
@@ -64,6 +77,7 @@ class window(QMainWindow):
             sys.exit()
         else:
             pass
+
 
 if __name__ == "__main__":  # had to add this otherwise app crashed
 
