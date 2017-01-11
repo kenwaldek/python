@@ -3,9 +3,9 @@
 ###############################################################
 # kenwaldek                           GPL-license
 
-# Title: PyQt5 lesson 11              Version: 1.0
+# Title: PyQt5 lesson 12              Version: 1.0
 # Date: 09-01-17                      Language: python3
-# Description: pyqt5 gui and font widget
+# Description: pyqt5 gui and color picker widget
 # pythonprogramming.net from PyQt4 to PyQt5
 ###############################################################
 # do something
@@ -83,6 +83,11 @@ class window(QMainWindow):
         comboBox.move(25, 250)
         self.styleChoice.move(25, 150)
         comboBox.activated[str].connect(self.style_choice)
+
+        color = QColor(0,0,0)
+        fontColer = QAction('font bg color', self)
+        fontColer.triggered.connect(self.color_picker)
+        self.toolBar.addAction(fontColer)
 
         self.show()
 
