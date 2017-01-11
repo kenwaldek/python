@@ -78,8 +78,8 @@ class window(QMainWindow):
 ##  file = open(name, 'r')
 ##  TypeError: expected str, bytes or os.PathLike object, not tuple
     def file_open(self):
-        filename = QFileDialog.getOpenFileName(self, 'Open File')
-        file = open(filename, 'r')
+        name = QFileDialog.getOpenFileName(self, 'Open File')
+        file = open(name, 'r')
 
         self.editor()
 
