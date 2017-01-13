@@ -16,7 +16,7 @@ from PyQt5.QtCore import QCoreApplication, Qt
 from PyQt5.QtGui import QIcon, QColor
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QAction, QMessageBox
 from PyQt5.QtWidgets import QCalendarWidget, QFontDialog, QColorDialog, QTextEdit, QFileDialog
-from PyQt5.QtWidgets import QCheckBox, QProgressBar, QComboBox, QLabel, QStyleFactory
+from PyQt5.QtWidgets import QCheckBox, QProgressBar, QComboBox, QLabel, QStyleFactory, QLineEdit, QInputDialog
 
 
 
@@ -26,7 +26,7 @@ class window(QMainWindow):
         super(window, self).__init__()
         self.setGeometry(50, 50, 800, 500)
         self.setWindowTitle('pyqt5 Tut')
-        # self.setWindowIcon(QIcon('pic.png'))
+        self.setWindowIcon(QIcon('pic.png'))
 
         extractAction = QAction('&Get to the choppah', self)
         extractAction.setShortcut('Ctrl+Q')
@@ -74,20 +74,18 @@ class window(QMainWindow):
         self.textEdit = QTextEdit()
         self.setCentralWidget(self.textEdit)
 
-##Todo looking what the error is can't open an file program ends in osx
-##  file = open(name, 'r')
-##  TypeError: expected str, bytes or os.PathLike object, not tuple
     def file_open(self):
-        name = QFileDialog.getOpenFileName(self, 'Open File')
+        # need to make name an tupple otherwise i had an error and app crashed
+        name, _ = QFileDialog.getOpenFileName(self, 'Open File', options=QFileDialog.DontUseNativeDialog)
+        print('tot na dialog gelukt')
         file = open(name, 'r')
-
+        print('na het inlezen gelukt')
         self.editor()
 
         with file:
             text = file.read()
             self.textEdit.setText(text)
 
-##End of code problem
     def color_picker(self):
         color = QColorDialog.getColor()
         self.styleChoice.setStyleSheet('QWidget{background-color: %s}' % color.name())
@@ -153,7 +151,6 @@ class window(QMainWindow):
         else:
             self.setGeometry(50, 50 , 500, 300)
 
-
     def close_application(self):
 
         choice = QMessageBox.question(self, 'Message',
@@ -167,7 +164,7 @@ class window(QMainWindow):
             pass
 
 
-if __name__ == "__main__":  # had to add this otherwise app crashed
+if __name__ == "__main__":
 
     def run():
         app = QApplication(sys.argv)
