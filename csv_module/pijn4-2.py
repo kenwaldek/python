@@ -23,7 +23,6 @@ class App(Frame):
 
     def inlezen(self):
         df = pd.read_csv('pijn.csv', names=['Tijd', 'Pijn']) #names= om namen aan de colomen toe te voegen
-# todo align de cellen
         print(df)  #gewoon om een uitprint in terminal te zien
         lezen1 = Label(self, text='De laatste 10 ingevoerde waarden zijn:')  #laatste 10st ingevoerd tonen
         lezen1.grid(row=3, column=0, padx=5, pady=3)  #op deze plaats laten verschijnen

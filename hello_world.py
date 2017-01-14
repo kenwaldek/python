@@ -8,9 +8,8 @@
 # Description: just a hello world the beginning of everything
 #
 ###############################################################
-
+# Share if you care, think of it like an pythonic way
 # do something
-print("hello world")
-
+print('hello world')
 
 
