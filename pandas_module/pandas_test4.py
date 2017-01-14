@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek                         GPL-license
+# © kenwaldek                         MIT-license
 #
 # Title: pandas 4                     Version: 1.0
 # Date: 01-01-2017                    Language: python3

@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek                           GPL-license
+# © kenwaldek                           MIT-license
 #
 # Title: sqlite3_test3                  Version: 1.0
 # Date: 27-12-16                        Language: python3

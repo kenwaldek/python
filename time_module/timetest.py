@@ -2,7 +2,7 @@
 #  -*- coding:utf-8 -*-
 
 ###############################################################
-#  © kenwaldek                  GPL-license
+#  © kenwaldek                  MIT-license
 #
 # Title: time                   Version: 1.0
 # Date:  21-12-16               Language: python3

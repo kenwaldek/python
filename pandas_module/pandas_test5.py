@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek                         GPL-license
+# © kenwaldek                         MIT-license
 #
 # Title: pandas 5                     Version: 1.0
 # Date: 02-01-2017                    Language: python3

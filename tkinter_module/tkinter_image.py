@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 #  -*- coding:utf-8 -*-
 ###############################################################
-# © kenwaldek                         GPL-license
+# © kenwaldek                         MIT-license
 #
 # Title: tkinter_image                Version: 1.0
 # Date: 26-12-16                      Language: python3
