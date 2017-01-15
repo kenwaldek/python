@@ -13,10 +13,10 @@
 import pickle
 
 ## pickle out to file
-# example_dict = {1:'2',2:'5',3:'f'}
-# pickle_out = open('dict.pickle','wb')  # wb= write byte
-# pickle.dump(example_dict, pickle_out)
-# pickle_out.close()
+example_dict = {1:'2',2:'5',3:'f'}
+pickle_out = open('dict.pickle','wb')  # wb= write byte
+pickle.dump(example_dict, pickle_out)
+pickle_out.close()
 
 # read pickle file in to terminal
 pickle_in = open('dict.pickle','rb') # rb= read byte
