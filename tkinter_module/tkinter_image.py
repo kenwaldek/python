@@ -11,8 +11,6 @@
 
 from PIL import Image, ImageTk
 from tkinter import *
-from pillow import *
-from PIL import *
 
 
 class Window(Frame):
