@@ -1,8 +1,5 @@
 # python
 
+MIT-licence
 
-      ©      ___                      __   ___
-       |__/ |__  |\ | |  |  /\  |    |  \ |__  |__/
-       |  \ |___ | \| |/\| /~~\ |___ |__/ |___ |  \
-
-here lives the python code examples
+Here lives the python code examples, they are splitted by function or module
