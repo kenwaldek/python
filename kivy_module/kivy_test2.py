@@ -12,7 +12,7 @@
 # do something
 
 import kivy
-kivy.require('1.9.0')
+kivy.require('1.8.0') # op rpi gebruik 1.8.0
 from kivy.app import App
 from kivy.uix.button import Label
 
@@ -20,5 +20,7 @@ class kivi_test(App):
     def build(self):
         return Label(text='hello kivy test')
 
-KiviTest = kivi_test()
-KiviTest.run()
+
+if __name__ == "__main__":
+    KiviTest = kivi_test()
+    KiviTest.run()
