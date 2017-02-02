@@ -20,6 +20,9 @@ from luma.core.render import canvas
 from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
 from PIL import ImageFont
 import time
+import subprocess
+
+#Todo not working yet more research
 
 ## een delay omdat je netwerk nog niet volledig opgestart is en grep nog niet werkt
 time.sleep(30)
@@ -46,12 +49,15 @@ font_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
 font2 = ImageFont.truetype(font_path, 20)
 
 ## main programma niet aankomen
-while True:
-        with canvas(device) as draw:
-            try:
-                draw.rectangle(device.bounding_box, outline="white", fill="black")
-                draw.text((10, 20), toon_netwerk, font=font2, fill="white")
-                draw.text((10, 40), ipaddress, font=font2, fill="white")
-            except KeyboardInterrupt:
-                cleanup()
-                break
+
+with canvas(device) as draw:
+    try:
+        draw.rectangle(device.bounding_box, outline="white", fill="black")
+        draw.text((10, 20), toon_netwerk, font=font2, fill="white")
+        draw.text((10, 40), ipaddress, font=font2, fill="white")
+        time.sleep(180)
+
+        cleanup()
+    except KeyboardInterrupt:
+        cleanup()
+        break

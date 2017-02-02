@@ -3,35 +3,23 @@
 ###############################################################
 # kenwaldek                           MIT-license
 #
-# Title: oled and hc05             Version: 1.0
-# Date: 30-01-2017                 Language: python3
-# Description: measure distants and print on oled with rpi
-#
+# Title: hc 05 test                   Version: 1.0
+# Date:  27_01_17                     Language: python3
+# Description: hc 05 afstands test, python3 script met
+# gpio cleanup en keyboard interrupt
 ###############################################################
 # Share if you care, do something
-import os
-import time
-import sys
+import RPi.GPIO as GPIO                    #Import GPIO library
+import time                                #Import time library
+GPIO.setmode(GPIO.BCM)                     #Set GPIO pin numbering
 
-from PIL import ImageFont
-from luma.core.serial import i2c
-from luma.core.render import canvas
-from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
-import RPi.GPIO as GPIO
+TRIG = 23                                  #Associate pin 23 to TRIG
+ECHO = 24                                  #Associate pin 24 to ECHO
 
+print ("Distance measurement in progress")
 
-if os.name != 'posix':
-    sys.exit('{} platform not supported'.format(os.name))
-
-TRIG = 23
-ECHO = 24
-serial = i2c(port=1, address=0x3C)
-device = ssd1306(serial, rotate=0)
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(TRIG, GPIO.OUT)
-GPIO.setup(ECHO, GPIO.IN)
-
+GPIO.setup(TRIG,GPIO.OUT)                  #Set pin as GPIO out
+GPIO.setup(ECHO,GPIO.IN)                   #Set pin as GPIO in
 
 while True:
   try:
@@ -57,22 +45,10 @@ while True:
     if distance > 2 and distance < 400:      #Check whether the distance is within range
       print ("Distance:",distance - 0.5,"cm")  #Print distance with 0.5 cm calibration
     else:
-      print ("Out Of Range")
+      print ("Out Of Range")                 #display out of range
 
-    # font_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
-    #                                          'fonts', 'C&C Red Alert [INET].ttf'))
-    #
-    font_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
-                                             'fonts', 'pixelmix.ttf'))
-    font2 = ImageFont.truetype(font_path, 20)
-    with canvas(device) as draw:
-        draw.rectangle(device.bounding_box, outline="white", fill="black")
-        draw.text((10, 20), str(distance) + ' cm', font=font2, fill="white")
-        draw.text((10, 0), 'gemeten afstand', fill="white")
-        draw.text((10, 40), 'hc 05',font=font2, fill="white")
-
-        time.sleep(1)
   except KeyboardInterrupt:
     break
 
 GPIO.cleanup()
+
