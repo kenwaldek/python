@@ -3,26 +3,25 @@
 ###############################################################
 # kenwaldek                           MIT-license
 #
-# Title: print ip on oled ssd1306     Version: 1.0
-# Date: 30-01-20117                   Language: python3
+# Title: print ip on oled ssd1306     Version: 2.0
+# Date: 02-02-2017                    Language: python3
 # Description: print het ip adress op je oled scherm
-# wanneer je rpi opstart zodat je je ip weet
+# wanneer je rpi opstart zodat je je ip weet sluiten na tijd.
 ###############################################################
 # Share if you care, do something
 
 ## via systemd een service gemaakt genaamd oled_ip.service zie documentatie
 
-
-import os
 import sys
 from luma.core.serial import i2c
 from luma.core.render import canvas
 from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
 from PIL import ImageFont
 import time
+import os
+import signal
 import subprocess
 
-#Todo not working yet more research
 
 ## een delay omdat je netwerk nog niet volledig opgestart is en grep nog niet werkt
 time.sleep(30)
@@ -36,7 +35,7 @@ ipaddress = os.popen("ifconfig eth0 | grep 'inet addr' | awk -F: '{print $2}' | 
 #ipaddress = os.popen("ifconfig wlan0 | grep 'inet addr' | awk -F: '{print $2}' | awk '{print $1}'").read()
 
 ## kies je netwerk lan of wifi
-toon_netwerk = 'eth0'
+toon_netwerk = '120 eth0'
 # toon_netwerk = 'wlan0'
 
 ## kies het gewenste oled type ssd1306, ssd1325, ssd1331, sh1106
@@ -51,13 +50,15 @@ font2 = ImageFont.truetype(font_path, 20)
 ## main programma niet aankomen
 
 with canvas(device) as draw:
-    try:
-        draw.rectangle(device.bounding_box, outline="white", fill="black")
-        draw.text((10, 20), toon_netwerk, font=font2, fill="white")
-        draw.text((10, 40), ipaddress, font=font2, fill="white")
-        time.sleep(180)
+    draw.rectangle(device.bounding_box, outline="white", fill="black")
+    draw.text((10, 20), toon_netwerk, font=font2, fill="white")
+    draw.text((10, 40), ipaddress, font=font2, fill="white")
+    # time.sleep(120)
+    # cleanup()
+    # os.killpg(os.getpgid(pro.pid), signal.SIGTERM)  # Send the signal to all the process groups
 
-        cleanup()
-    except KeyboardInterrupt:
-        cleanup()
-        break
+
+
+
+#todo werkt nog niet, uitzoeken waarom os.system of subprocess
+#niet wil werken via systemd tijdens boot
