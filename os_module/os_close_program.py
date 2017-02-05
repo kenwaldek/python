@@ -13,7 +13,7 @@ import os
 
 def closeFile():
     try:
-        os.system('pkill python3')  # dit is het commando om alle notpad te sluiten
+        os.system('pkill python3')
 
     except Exception:
 
